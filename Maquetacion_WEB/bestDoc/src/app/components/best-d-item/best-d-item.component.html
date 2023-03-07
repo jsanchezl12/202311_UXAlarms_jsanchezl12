@@ -1,0 +1,28 @@
+<div *ngFor="let documento of documentos">
+  <td class="bestDitem-celda celda-first">
+    <label>id</label>
+    <p>{{documento.id}}</p>
+  </td>
+
+  <td class="bestDitem-celda">
+    <label>Edad</label>
+    <p>{{documento.age}}</p>
+  </td>
+
+  <td class="bestDitem-celda ">
+    <label>Nombre</label>
+    <p>{{documento.name}}</p>
+  </td>
+
+  <td class="bestDitem-celda celda-last">
+    <label>Email</label>
+    <p>{{documento.email}}</p>
+  </td>
+<div class="bestDitem-celda">
+  <label>Estado:</label>
+  <mat-icon [className]=" documento.isActive ? 'activo' : 'inactivo' ">
+    check
+  </mat-icon>
+</div>
+
+</div>

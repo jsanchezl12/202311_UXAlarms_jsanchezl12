@@ -55,4 +55,11 @@ npm i --save-dev @types/jquery
 10. Se crea un componente
 ```
 ng generate component dashboard
+ng generate component components/best-d-grid
+ng generate component components/best-d-item
+ng generate component components/best-d-noticias
+ng generate component components/best-d-noticias-item
+ng generate component components/best-d-semaforo
+ng generate component components/best-d-semaforo-item
+ng generate component components/bestDControls/best-de-toggle-view
 ```

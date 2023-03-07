@@ -13,6 +13,8 @@ import { BestDSemaforoComponent } from './components/best-d-semaforo/best-d-sema
 import { BestDSemaforoItemComponent } from './components/best-d-semaforo-item/best-d-semaforo-item.component';
 import { BestDeToggleViewComponent } from './components/bestDControls/best-de-toggle-view/best-de-toggle-view.component';
 import { MatIconModule } from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

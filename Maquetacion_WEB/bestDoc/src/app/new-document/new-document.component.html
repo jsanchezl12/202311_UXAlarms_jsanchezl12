@@ -1,0 +1,30 @@
+<section class="container">
+  <form id="new-document" class="row">
+    <mat-form-field class="col-12 col-md-6">
+      <mat-label for>Titulo del archivo:</mat-label>
+      <input matInput placeholder="Titulo del archivo a cargar" value="">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Archivo:</mat-label>
+      <input type="file" id="file" (change)="fileChange($event)">
+    </mat-form-field>
+
+    <mat-form-field class="col-12 col-md-6">
+      <mat-label for>Nombre del Aspirante:</mat-label>
+      <input matInput placeholder="Nombre del aspirante" value="">
+    </mat-form-field>
+
+    <mat-form-field class="col-12 col-md-6">
+      <mat-label for>Edad del Aspirante:</mat-label>
+      <input matInput placeholder="Edad del aspirante" value="">
+    </mat-form-field>
+
+    <mat-form-field class="col-12 col-md-6">
+      <mat-label for>Email del Aspirante:</mat-label>
+      <input matInput placeholder="Email del aspirante" value="">
+    </mat-form-field>
+
+  </form>
+
+</section>

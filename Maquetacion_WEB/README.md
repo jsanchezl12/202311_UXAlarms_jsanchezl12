@@ -63,3 +63,10 @@ ng generate component components/best-d-semaforo
 ng generate component components/best-d-semaforo-item
 ng generate component components/bestDControls/best-de-toggle-view
 ```
+
+11. Se crea un modulo
+```
+ng generate module documentos
+ng generate component new-document --module=documentos
+ng generate component lista --module=documentos
+```

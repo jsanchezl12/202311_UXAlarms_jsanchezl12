@@ -70,3 +70,10 @@ ng generate module documentos
 ng generate component new-document --module=documentos
 ng generate component lista --module=documentos
 ```
+
+12. Entre mas campos en la URL se debe ir de Mayor a Menor
+```
+{ path: 'documentos/new-document', component: NewDocumentComponent },
+{ path: 'documentos', component: DocumentosComponent },
+{ path: 'documentos/lista', component: ListaComponent },
+```

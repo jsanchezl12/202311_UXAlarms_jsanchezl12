@@ -19,7 +19,7 @@ ng add @angular/material
 ```
 npm install jquery - save
 ```
-5. Instalar Bootstrap 5.2.3
+5. Instalar Bootstrap [5.2.3](https://getbootstrap.com/docs/5.2/getting-started/introduction/)
 ```
 npm install bootstrap - save
 ```
@@ -78,7 +78,4 @@ ng generate component lista --module=documentos
 { path: 'documentos/lista', component: ListaComponent },
 ```
 
-13. Angular Material
-```
-https://material.angular.io/
-```
+13. [Angular Material](https://material.angular.io/)

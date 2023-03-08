@@ -1,0 +1,68 @@
+.home{
+  margin: 25px;
+}
+
+hr{
+  margin:0;
+  color: #FFAA4C;
+}
+
+.isPrincipalHeader{
+  font-family: 'DS-Sans', sans-serif;
+  font-size: 70px;
+  color: #FFAA4C;
+  font-style: bold;
+  text-align: center;
+  line-height: 26pt;
+  margin: 65px 25px;
+}
+
+.isSecondColumn{
+  margin-top: 200px;
+}
+.subText1
+{
+  font-family: 'DS-Sans', sans-serif;
+  font-size: 30px;
+  color: #035397;
+  font-style: light;
+  text-align: left;
+  line-height: 26pt;
+  margin-left: 25px;
+  margin-bottom: 25px;
+}
+
+.subTitle1{
+  font-family: 'DS-Sans', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  color: #001E6C;
+  font-style: bold;
+  text-align: left;
+  line-height: 26pt;
+  margin-top: 100px;
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+.subEventList
+{
+  font-family: 'DS-Sans', sans-serif;
+  font-size: 30px;
+  color: #035397;
+  font-style: light;
+  text-align: left;
+  line-height: 26pt;
+  margin-top:10px;
+  margin-left: 25px;
+  margin-bottom: 25px;
+}
+
+.banner_img{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  margin-left: -200px;
+  -webkit-filter: blur(2px); /* Safari 6.0 - 9.0 */
+  filter: blur(2px);
+}

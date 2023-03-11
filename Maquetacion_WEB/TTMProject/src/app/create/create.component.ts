@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  alarmType: string = 'Clásica';
+  alarmType: string = '';
   sonido: string = '';
   constructor() { }
 
@@ -15,12 +15,10 @@ export class CreateComponent implements OnInit {
   }
 
   changeAlarmType(alarmType_: string) {
-    console.log(alarmType_);
     this.alarmType = alarmType_;
   }
 
   changeSonido(sonido_: string) {
-    console.log(sonido_);
     this.sonido = "Sonido " + sonido_;
   }
 

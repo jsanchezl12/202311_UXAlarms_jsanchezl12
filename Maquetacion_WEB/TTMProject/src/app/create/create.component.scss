@@ -1,25 +1,24 @@
-.inputRow{
+.inputRow {
   margin-top: 30px;
   margin-bottom: 20px;
   width: 90%;
 }
 
-.colWidth{
-
+.colWidth {
   text-align: left;
 }
 
-.bckColorYellow{
+.bckColorYellow {
   background-color: #FFD09B;
   border: #FFD09B;
 }
 
-.colorBlue{
+.colorBlue {
   color: #5089C6;
 }
 
-.ddSpan{
-  margin-left: 30px;
+.ddSpan {
+  margin-left: 10px;
   margin-right: 30px;
   display: inline-block;
   width: 150px;
@@ -29,58 +28,81 @@
 
 }
 
-.inputField
-{
+.listRecordsTitle {
+  font-size: 30px;
+  color: #5089C6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.centerLComponents {
+  margin-top: 50px;
+  margin-left: 70px;
+  margin-right: 70px;
+  width: 60%;
+  text-align: center;
+}
+
+.btnRecord {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  &:hover {
+    border: #FFD09B solid 1px;
+    border-radius: 100px;
+
+  }
+}
+
+.inputField {
   width: 250px;
   height: 50px;
 }
 
-.dropDownField
-{
+.dropDownField {
   width: 250px;
-  &.backgroundColor{
+
+  &.backgroundColor {
     background-color: #5089C6;
     border: #5089C6;
   }
 }
 
-.listSounds{
-  margin-top: 50px;
+.listSounds {
   margin-left: 70px;
   width: 60%;
   text-align: center;
 }
 
-.btnGr{
-  margin-top: 70px;
-
+.btnGr {
+  margin-top: 20px;
 }
 
-.listSoundsTitle{
+.listSoundsTitle {
   font-size: 30px;
   color: #5089C6;
   margin-bottom: 20px;
   text-align: left;
 }
 
-.list-group{
+.list-group {
   max-height: 200px;
   margin-bottom: 10px;
-  overflow:scroll;
+  overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
 
-.listSounds .list-group a{
+.listSounds .list-group a {
   font-size: 20px;
   background-color: #FFD09B;
-  &:hover{
+
+  &:hover {
     background-color: #5089C6;
     color: white;
   }
 }
 
-.timePicker{
-  margin-top: 20px;
+.timePicker {
   margin-left: 10px;
   width: 450px;
   font-size: 65px;
@@ -89,18 +111,16 @@
 
 }
 
-.labelField
-{
+.labelField {
   width: 250px;
 }
 
-.btnSecond
-{
+.btnSecond {
   margin-left: 30px;
   margin-right: 30px;
 }
 
-.btnBlue{
+.btnBlue {
   background-color: #5089C6;
   border: #5089C6;
   color: white;
@@ -109,7 +129,7 @@
   font-size: 30px;
 }
 
-.btnGray{
+.btnGray {
   background-color: #c9c9c9;
   border: #c9c9c9;
   color: white;

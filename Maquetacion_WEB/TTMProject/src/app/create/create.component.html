@@ -4,17 +4,18 @@
       <div class="row g-3 align-items-center">
         <div class="row inputRow">
           <div class="col-auto colWidth">
-            <h1 for="inputFecha" class="col-form-label colorBlue">Crear Alarma</h1>
+            <h1 for="inputFecha" class="col-form-label colorBlue labelField">Crear Alarma</h1>
           </div>
           <div class="col-auto colWidth">
             <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle bckColorYellow" type="button" data-bs-toggle="dropdown"
+              <button class="btn btn-secondary dropdown-toggle bckColorYellow dropDownField" type="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
+                <span class="ddSpan">{{alarmType}}</span>
               </button>
-              <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item active">Clásica</a></li>
-                <li><a class="dropdown-item">Nota de Voz</a></li>
-                <li><a class="dropdown-item">Reconocimiento por Voz</a></li>
+              <ul class="dropdown-menu dropdown-menu-dark dropDownField backgroundColor">
+                <li><a class="dropdown-item" (click)="changeAlarmType('Clásica')">Clásica</a></li>
+                <li><a class="dropdown-item" (click)="changeAlarmType('Nota de Voz')">Nota de Voz</a></li>
+                <li><a class="dropdown-item" (click)="changeAlarmType('Reconocimiento por Voz')">Reconocimiento por Voz</a></li>
               </ul>
             </div>
           </div>
@@ -23,7 +24,7 @@
       <div class="row g-3 align-items-center">
         <div class="row inputRow">
           <div class="col-auto colWidth">
-            <h1 for="inputFecha" class="col-form-label colorBlue">Fecha</h1>
+            <h1 for="inputFecha" class="col-form-label colorBlue labelField">Fecha</h1>
           </div>
           <div class="col-auto colWidth">
             <input type="text" id="inputFecha" class="form-control inputField bckColorYellow">
@@ -33,7 +34,7 @@
       <div class="row g-3 align-items-center">
         <div class="row inputRow">
           <div class="col-auto colWidth">
-            <h1 for="inputRepetir" class="col-form-label colorBlue">Repetir</h1>
+            <h1 for="inputRepetir" class="col-form-label colorBlue labelField">Repetir</h1>
           </div>
           <div class="col-auto colWidth">
             <input type="text" id="inputRepetir" class="form-control inputField bckColorYellow">
@@ -43,7 +44,7 @@
       <div class="row g-3 align-items-center">
         <div class="row inputRow">
           <div class="col-auto colWidth">
-            <h1 for="inputDescripcion" class="col-form-label colorBlue">Descripcion</h1>
+            <h1 type="text" for="inputDescripcion" class="col-form-label colorBlue labelField ">Descripcion</h1>
           </div>
           <div class="col-auto colWidth">
             <input type="text" id="inputDescripcion" class="form-control inputField bckColorYellow">
@@ -52,7 +53,7 @@
       </div>
       <div class="row g-3 align-items-center">
         <div class="row inputRow">
-          <div class="col-auto">
+          <div class="col-auto btnGr">
             <button type="button" class="btn btn-primary btn-lg btnSecond btnGray">Cancelar</button>
             <button type="button" class="btn btn-secondary btn-lg btnSecond btnBlue">Crear </button>
           </div>
@@ -60,7 +61,28 @@
       </div>
     </div>
     <div class="col">
-      2 of 2
+      <div class="row">
+        <div class="cs-form">
+          <input type="time" class="form-control timePicker" value="10:05" />
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="listSounds">
+          <div class="listSoundsTitle">Sonido:  {{sonido}}</div>
+          <div class="list-group">
+            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('1')"> Sonido 1</a>
+            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('2')"> Sonido 2</a>
+            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('3')"> Sonido 3</a>
+            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('4')"> Sonido 4</a>
+            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('5')"> Sonido 5</a>
+            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('6')"> Sonido 6</a>
+            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('7')"> Sonido 7</a>
+            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('8')"> Sonido 8</a>
+            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('9')"> Sonido 9</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

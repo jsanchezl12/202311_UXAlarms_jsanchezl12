@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:dev":"ng serve --watch",
+    "start:dev": "ng serve --watch",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -22,8 +22,12 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
+    "@lottiefiles/lottie-player": "^1.7.1",
     "bootstrap": "^5.2.3",
     "jquery": "^3.6.3",
+    "lottie-web": "^5.10.2",
+    "ng-lottie": "^0.3.2",
+    "ngx-lottie": "^10.0.0",
     "popper.js": "^1.16.1",
     "rxjs": "~7.8.0",
     "save": "^2.9.0",

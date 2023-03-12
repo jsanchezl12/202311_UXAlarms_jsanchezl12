@@ -24,138 +24,242 @@
       </div>
     </div>
   </div>
-  <!-- CLASICA -->
 
-  <div class="row" [hidden]="!(alarmType == 'Clásica')">
-    <div class="col">
-      <div class="row g-3 align-items-center">
-        <div class="row inputRow">
-          <div class="col-auto colWidth">
-            <h1 for="inputFecha" class="col-form-label colorBlue labelField">Fecha</h1>
+  <div class="formCreate">
+    <!-- Modal Fecha -->
+    <div class="modal fade" id="fechaModal" tabindex="-1" aria-labelledby="fechaModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="imgContainer">
+              <img src="../assets/iconos/feb_2023.png"
+                class="img-fluid msgImage" alt="Persona hablando por celular">
+            </div>
           </div>
-          <div class="col-auto colWidth">
-            <input type="text" id="inputFecha" class="form-control inputField bckColorYellow">
-          </div>
-        </div>
-      </div>
-      <div class="row g-3 align-items-center">
-        <div class="row inputRow">
-          <div class="col-auto colWidth">
-            <h1 for="inputRepetir" class="col-form-label colorBlue labelField">Repetir</h1>
-          </div>
-          <div class="col-auto colWidth">
-            <input type="text" id="inputRepetir" class="form-control inputField bckColorYellow">
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btnBckGray" data-bs-dismiss="modal">Close</button>
+            <button (click)="saveDate()" type="button" data-bs-dismiss="modal"
+              class="btn btn-primary btnBckBlue"> OK </button>
           </div>
         </div>
       </div>
-      <div class="row g-3 align-items-center">
-        <div class="row inputRow">
-          <div class="col-auto colWidth">
-            <h1 type="text" for="inputDescripcion" class="col-form-label colorBlue labelField ">Descripcion</h1>
-          </div>
-          <div class="col-auto colWidth">
-            <input type="text" id="inputDescripcion" class="form-control inputField bckColorYellow">
-          </div>
-        </div>
-      </div>
-
     </div>
-    <div class="col">
-      <div class="row">
-        <div class="cs-form">
-          <input type="time" class="form-control timePicker" value="10:05" />
+
+    <!-- CLASICA -->
+    <div class="row" [hidden]="!(alarmType == 'Clásica')">
+
+
+      <div class="col">
+        <div class="row g-3 align-items-center">
+          <div class="row inputRow">
+            <div class="col-auto colWidth">
+              <h1 for="inputFecha" class="col-form-label colorBlue labelField">Fecha</h1>
+            </div>
+            <div class="col-auto colWidth">
+              <input type="text" id="inputFechaC" class="form-control inputField bckColorYellow" (click)="changeDateInputId('inputFechaC')"
+              data-bs-toggle="modal" data-bs-target="#fechaModal">
+            </div>
+          </div>
+        </div>
+        <div class="row g-3 align-items-center">
+          <div class="row inputRow">
+            <div class="col-auto colWidth">
+              <h1 for="inputRepetir" class="col-form-label colorBlue labelField">Repetir</h1>
+            </div>
+            <div class="col-auto colWidth">
+              <input type="text" id="inputRepetir" class="form-control inputField bckColorYellow">
+            </div>
+          </div>
+        </div>
+        <div class="row g-3 align-items-center">
+          <div class="row inputRow">
+            <div class="col-auto colWidth">
+              <h1 type="text" for="inputDescripcion" class="col-form-label colorBlue labelField ">Descripcion</h1>
+            </div>
+            <div class="col-auto colWidth">
+              <input type="text" id="inputDescripcion" class="form-control inputField bckColorYellow">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="cs-form">
+            <input type="time" class="form-control timePicker" value="10:05" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="listSounds">
+            <div class="listSoundsTitle">Sonido: {{sonido}}</div>
+            <div class="list-group">
+              <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('1')"> Sonido
+                1</a>
+              <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('2')"> Sonido
+                2</a>
+              <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('3')"> Sonido
+                3</a>
+              <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('4')"> Sonido
+                4</a>
+              <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('5')"> Sonido
+                5</a>
+              <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('6')"> Sonido
+                6</a>
+              <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('7')"> Sonido
+                7</a>
+              <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('8')"> Sonido
+                8</a>
+              <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('9')"> Sonido
+                9</a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="listSounds">
-          <div class="listSoundsTitle">Sonido: {{sonido}}</div>
-          <div class="list-group">
-            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('1')"> Sonido
-              1</a>
-            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('2')"> Sonido
-              2</a>
-            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('3')"> Sonido
-              3</a>
-            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('4')"> Sonido
-              4</a>
-            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('5')"> Sonido
-              5</a>
-            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('6')"> Sonido
-              6</a>
-            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('7')"> Sonido
-              7</a>
-            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('8')"> Sonido
-              8</a>
-            <a class="list-group-item list-group-item-action" aria-current="true" (click)="changeSonido('9')"> Sonido
-              9</a>
+    </div>
+    <!-- NOTA DE VOZ -->
+    <div class="row" [hidden]="!(alarmType == 'Nota de Voz')">
+      <div class="col">
+        <div class="row g-3 align-items-center">
+          <div class="row inputRow">
+            <div class="col-auto colWidth">
+              <h1 for="inputFecha" class="col-form-label colorBlue labelField">Fecha</h1>
+            </div>
+            <div class="col-auto colWidth">
+              <input type="text" id="inputFechaNV" class="form-control inputField bckColorYellow" (click)="changeDateInputId('inputFechaNV')"
+              data-bs-toggle="modal" data-bs-target="#fechaModal">
+            </div>
+          </div>
+        </div>
+        <div class="row g-3 align-items-center">
+          <div class="row inputRow">
+            <div class="col-auto colWidth">
+              <h1 for="inputRepetir" class="col-form-label colorBlue labelField">Repetir</h1>
+            </div>
+            <div class="col-auto colWidth">
+              <input type="text" id="inputRepetir" class="form-control inputField bckColorYellow">
+            </div>
+          </div>
+        </div>
+        <div class="row g-3 align-items-center">
+          <div class="row inputRow">
+            <div class="col-auto colWidth">
+              <h1 type="text" for="inputDescripcion" class="col-form-label colorBlue labelField ">Descripcion</h1>
+            </div>
+            <div class="col-auto colWidth">
+              <input type="text" id="inputDescripcion" class="form-control inputField bckColorYellow">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="cs-form">
+            <input type="time" class="form-control timePicker" value="10:05" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="centerLComponents">
+            <div class="listRecordsTitle">Grabar Nota de Voz: </div>
+            <a><img src="../assets/iconos/voice.png" alt="Hogar" width="80" height="80"
+                class="d-inline-block align-text-top btnRecord"></a>
+            <input type="text" id="inputDescripcion" class="form-control  bckColorYellow">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" [hidden]="!(alarmType == 'Nota de Voz' || alarmType == 'Clásica')">
+      <div class="col">
+        <div class="row g-3 align-items-center">
+          <div class="row inputRow">
+            <div class="col-auto btnGr">
+              <button type="button" class="btn btn-primary btn-lg btnSecond btnGray">Cancelar</button>
+              <button type="button" class="btn btn-secondary btn-lg btnSecond btnBlue">Crear </button>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="row" [hidden]="!(alarmType == 'Nota de Voz')">
-    <div class="col">
-      <div class="row g-3 align-items-center">
-        <div class="row inputRow">
-          <div class="col-auto colWidth">
-            <h1 for="inputFecha" class="col-form-label colorBlue labelField">Fecha</h1>
-          </div>
-          <div class="col-auto colWidth">
-            <input type="text" id="inputFecha" class="form-control inputField bckColorYellow">
-          </div>
-        </div>
-      </div>
-      <div class="row g-3 align-items-center">
-        <div class="row inputRow">
-          <div class="col-auto colWidth">
-            <h1 for="inputRepetir" class="col-form-label colorBlue labelField">Repetir</h1>
-          </div>
-          <div class="col-auto colWidth">
-            <input type="text" id="inputRepetir" class="form-control inputField bckColorYellow">
-          </div>
-        </div>
-      </div>
-      <div class="row g-3 align-items-center">
-        <div class="row inputRow">
-          <div class="col-auto colWidth">
-            <h1 type="text" for="inputDescripcion" class="col-form-label colorBlue labelField ">Descripcion</h1>
-          </div>
-          <div class="col-auto colWidth">
-            <input type="text" id="inputDescripcion" class="form-control inputField bckColorYellow">
-          </div>
-        </div>
-      </div>
-
-    </div>
-    <div class="col">
-      <div class="row">
-        <div class="cs-form">
-          <input type="time" class="form-control timePicker" value="10:05" />
-        </div>
-      </div>
-      <div class="row">
-        <div class="centerLComponents">
-          <div class="listRecordsTitle">Grabar Nota de Voz: </div>
-          <a><img src="../assets/iconos/voice.png" alt="Hogar" width="80" height="80" class="d-inline-block align-text-top btnRecord"></a>
-          <input type="text" id="inputDescripcion" class="form-control  bckColorYellow">
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- RECONOCIMIENTO POR VOZ -->
   <div class="row" [hidden]="!(alarmType == 'Reconocimiento por Voz')">
-    Reconocimiento por Voz
-  </div>
-  <div class="row">
-    <div class="col">
-      <div class="row g-3 align-items-center">
-        <div class="row inputRow">
-          <div class="col-auto btnGr">
-            <button type="button" class="btn btn-primary btn-lg btnSecond btnGray">Cancelar</button>
-            <button type="button" class="btn btn-secondary btn-lg btnSecond btnBlue">Crear </button>
+    <!-- Mensaje Modal -->
+    <div class="modal fade" id="msgModal" tabindex="-1" aria-labelledby="msgModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="imgContainer imgBlur">
+              <img src="{{this.isVoiceRecognition ? '../assets/imagenes/web_3.jpg' :'../assets/imagenes/web_5.jpg'}}"
+                class="img-fluid msgImage" alt="Persona hablando por celular">
+              <div class="textMsg">
+                {{this.isVoiceRecognition ?
+                'A continuación va a Detener el proceso de Crear alarmas por reconocimiento de voz'
+                : 'A continuación va a Crear alarmas por reconocimiento de voz'}}
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btnBckGray" data-bs-dismiss="modal">Close</button>
+            <button (click)="startVoiceRecognition()" type="button" data-bs-dismiss="modal"
+              class="{{ this.isVoiceRecognition ?  'btn btn-danger' : 'btn btn-primary btnBckBlue'}}">
+              {{this.isVoiceRecognition ? 'Detener' : 'Confirmar'}}
+            </button>
           </div>
         </div>
       </div>
     </div>
+
+    <div class="col">
+      <div class="listAlarmas">
+        <div class="card bckColorYellow"
+          style="width: 25rem; padding-left: 5px; padding-right: 5px; margin-bottom: 10px;"
+          *ngFor="let alarma of alarmas; index as i">
+          <div class="card-body" style="padding: 10px;">
+            <div class="container text-center">
+              <div class="row">
+                <div class="col">
+                  <div class="row">
+                    <div class="col alarmaTitle">
+                      {{alarma.desc}}
+                    </div>
+                  </div>
+                  <div class="row alarmaDetails">
+                    <div class="col">
+                      {{alarma.alTime}}
+                    </div>
+                    <div class="col">
+                      {{alarma.frequency}}
+                    </div>
+                  </div>
+                </div>
+                <div class="col-3">
+                  <a><img src="../assets/iconos/draw_white.png" alt="Hogar" width="45" height="45"
+                      class="d-inline-block align-text-top "></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="cs-form align-items-center">
+          <ng-lottie class="lottiePlayer" [options]="options" (animationCreated)="onAnimate($any($event))">
+          </ng-lottie>
+        </div>
+      </div>
+      <div class="row">
+        <div class="">
+          <a data-bs-toggle="modal" data-bs-target="#msgModal">
+            <img src="{{this.isVoiceRecognition ? '../assets/iconos/voice_record.png' : '../assets/iconos/voice.png'}}"
+              alt="Record" width="80" height="80"
+              class="{{this.isVoiceRecognition? 'd-inline-block align-text-top btnRecordRed ' : 'd-inline-block align-text-top btnRecord'}}" />
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
+
 
 </div>

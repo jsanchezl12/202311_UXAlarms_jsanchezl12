@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AnimationOptions } from 'ngx-lottie';
+import { Alarma } from './alarma';
+import { interval, Subscription } from 'rxjs';
+
 
 @Component({
   selector: 'app-create',
@@ -7,19 +11,110 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  alarmType: string = '';
+  //alarmType: string = '';
+  lottieConfig: Object;
+  anim: any;
+  alarmType: string = 'Clásica';
   sonido: string = '';
-  constructor() { }
+  isVoiceRecognition: boolean = false;
+  alarmas: Array<Alarma> = [];
+  options: AnimationOptions = {
+    path: '/assets/sound-voice-waves.json',
+    autoplay: false
+  };
+  subscription: Subscription = new Subscription();
+  dateInputId: string = "";
+
+  constructor() {
+    this.lottieConfig = {
+      path: '../assets/sound-voice-waves.json',
+      background: 'transparent',
+      speed: 1,
+      renderer: 'canvas',
+      autoplay: true,
+      loop: true
+    };
+  }
 
   ngOnInit() {
   }
 
+  onAnimate(animationItem: Animation): void {
+    console.log(animationItem);
+    this.anim = animationItem;
+  }
+  stop() {
+    this.anim.stop();
+  }
+
+  play() {
+    this.anim.play();
+  }
+
+  pause() {
+    this.anim.pause();
+  }
+
   changeAlarmType(alarmType_: string) {
     this.alarmType = alarmType_;
+    if (this.isVoiceRecognition == true) {
+      this.isVoiceRecognition = false;
+      this.pause();
+      this.subscription.unsubscribe();
+    }
   }
 
   changeSonido(sonido_: string) {
     this.sonido = "Sonido " + sonido_;
   }
+
+
+  startVoiceRecognition() {
+    console.log("startVoiceRecognition")
+    this.changeAnimation();
+    if (this.isVoiceRecognition == true) {
+      this.startCreatingAlarm();
+    } else {
+      this.stopCreatingAlarm();
+    }
+  }
+
+  startCreatingAlarm() {
+    console.log("startCreatingAlarm")
+    this.subscription = interval(3000).subscribe(x => {
+      console.log("addAlarma")
+      this.addAlarma();
+    });
+  }
+
+  stopCreatingAlarm() {
+    console.log("stopCreatingAlarm")
+    this.subscription.unsubscribe();
+  }
+
+  changeAnimation() {
+    console.log("changeAnimation")
+    if (this.isVoiceRecognition == false) {
+      this.play();
+      this.isVoiceRecognition = true;
+    } else {
+      this.pause();
+      this.isVoiceRecognition = false;
+    }
+  }
+  addAlarma() {
+    this.alarmas.push(new Alarma(this.alarmas.length, "Alarma " + this.alarmas.length, this.alarmType, "2017-12-12", "12:00", "Diaria", this.sonido));
+  }
+
+  changeDateInputId(id: string) {
+    this.dateInputId = id;
+  }
+
+  saveDate() {
+    const dateIn = document.getElementById(this.dateInputId) as HTMLInputElement;
+    dateIn.value = "2023-03-18";
+  }
+
+
 
 }

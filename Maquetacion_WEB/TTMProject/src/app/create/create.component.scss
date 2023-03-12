@@ -54,6 +54,62 @@
   }
 }
 
+.msgImage{
+  border: 5px solid hsl(0, 0%, 65%);
+  border-radius: 20px;
+
+}
+
+.imgBlur{
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+
+.imgContainer{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.textMsg{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'DS-Sans', sans-serif;
+  font-size: 25px;
+  font-style: light;
+  text-align: left;
+  line-height: 26pt;
+}
+
+.btnRecordRed {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  &:hover {
+    border: #F98B8B solid 1px;
+    border-radius: 100px;
+
+  }
+}
+
+
+
+.alarmaDetails{
+  margin-top: 15px;
+  font-size: 18px;
+}
+.alarmaTitle{
+  font-size: 18px;
+  text-align: left;
+}
+
+.btnEdit {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .inputField {
   width: 250px;
   height: 50px;
@@ -88,8 +144,32 @@
 .list-group {
   max-height: 200px;
   margin-bottom: 10px;
-  overflow: scroll;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+  }
+}
+
+.lottiePlayer{
+  width: 300px;
+  margin-left: 160px;
+  display: block;
+}
+
+.listAlarmas {
+  max-height: 600px;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+  }
+
 }
 
 .listSounds .list-group a {
@@ -129,6 +209,12 @@
   font-size: 30px;
 }
 
+.btnBckBlue{
+  background-color: #5089C6;
+  border: #5089C6;
+  color: white;
+}
+
 .btnGray {
   background-color: #c9c9c9;
   border: #c9c9c9;
@@ -136,4 +222,9 @@
   width: 180px;
   height: 70px;
   font-size: 30px;
+}
+.btnBckGray{
+  background-color: #c9c9c9;
+  border: #c9c9c9;
+  color: white;
 }

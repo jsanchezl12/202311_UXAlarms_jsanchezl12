@@ -1,3 +1,150 @@
-<p>
-  events works!
-</p>
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <div class="row g-3 align-items-center">
+        <div class="row inputRow">
+          <div class="col-auto colWidth">
+            <h1 for="inputFecha" class="col-form-label colorBlue labelField">Eventos</h1>
+          </div>
+          <div class="col-auto colWidth">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle bckColorYellow dropDownField" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="ddSpan">{{eventType}}</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-dark dropDownField backgroundColor">
+                <li><a class="dropdown-item" (click)="changeEventType('Lista')">Lista</a></li>
+                <li><a class="dropdown-item" (click)="changeEventType('Calendario')">Calendario</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="formCreate">
+    <!-- Lista -->
+    <!-- Mensaje Modal -->
+    <div class="modal fade" id="msgModal" tabindex="-1" aria-labelledby="msgModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="imgContainer ">
+              <img src="{{this.isVoiceRecognition ? '../assets/imagenes/web_4.jpg' :'../assets/imagenes/web_2.jpg'}}"
+                class="img-fluid msgImage imgBlur" alt="Persona hablando por celular">
+              <div class="textMsg">
+                {{this.isVoiceRecognition ?
+                'A continuación va a Detener el proceso de Modificar alarmas por reconocimiento de voz'
+                : 'A continuación va a Modificar alarmas por reconocimiento de voz'}}
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btnBckGray" data-bs-dismiss="modal">Close</button>
+            <button (click)="startVoiceRecognition()" type="button" data-bs-dismiss="modal"
+              class="{{ this.isVoiceRecognition ?  'btn btn-danger' : 'btn btn-primary btnBckBlue'}}">
+              {{this.isVoiceRecognition ? 'Detener' : 'Confirmar'}}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" [hidden]="!(eventType == 'Lista')">
+      <div class="col">
+        <div class="listAlarmas">
+          <div class="card bckColorYellow"
+            style="width: 25rem; padding-left: 5px; padding-right: 5px; margin-bottom: 10px;"
+            *ngFor="let alarma of alarmas; index as i">
+            <div class="card-body" style="padding: 10px;">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    <div class="row">
+                      <div class="col alarmaTitle">
+                        {{alarma.desc}}
+                      </div>
+                    </div>
+                    <div class="row alarmaDetails">
+                      <div class="col">
+                        {{alarma.alTime}}
+                      </div>
+                      <div class="col">
+                        {{alarma.frequency}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <a><img src="../assets/iconos/draw_white.png" alt="Hogar" width="45" height="45"
+                        (click)="irEditar(alarma.type)" class="d-inline-block align-text-top "></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+          <div class="cs-form align-items-center">
+            <ng-lottie class="lottiePlayer" [options]="options" (animationCreated)="onAnimate($any($event))">
+            </ng-lottie>
+          </div>
+        </div>
+        <div class="row">
+          <div class="">
+            <a data-bs-toggle="modal" data-bs-target="#msgModal">
+              <img
+                src="{{this.isVoiceRecognition ? '../assets/iconos/voice_record.png' : '../assets/iconos/voice.png'}}"
+                alt="Record" width="80" height="80"
+                class="{{this.isVoiceRecognition? 'd-inline-block align-text-top btnRecordRed ' : 'd-inline-block align-text-top btnRecord'}}" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CALENDARIO -->
+    <div class="row" [hidden]="!(eventType == 'Calendario')">
+      <div class="col">
+        <div class="listAlarmas">
+          <div class="card bckColorYellow"
+            style="width: 25rem; padding-left: 5px; padding-right: 5px; margin-bottom: 10px;"
+            *ngFor="let alarma of alarmasFecha; index as i">
+            <div class="card-body" style="padding: 10px;">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col">
+                    <div class="row">
+                      <div class="col alarmaTitle">
+                        {{alarma.desc}}
+                      </div>
+                    </div>
+                    <div class="row alarmaDetails">
+                      <div class="col">
+                        {{alarma.alTime}}
+                      </div>
+                      <div class="col">
+                        {{alarma.frequency}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <a><img src="../assets/iconos/draw_white.png" alt="Hogar" width="45" height="45"
+                        class="d-inline-block align-text-top "></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="imgContainer">
+          <img src="../assets/iconos/feb_2023.png" class="img-fluid msgImage" alt="Persona hablando por celular"
+          (click)="alterAlarmasFecha()">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

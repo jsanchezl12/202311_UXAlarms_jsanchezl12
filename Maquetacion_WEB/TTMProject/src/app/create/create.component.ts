@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AnimationOptions } from 'ngx-lottie';
 import { Alarma } from '../modelos/alarma';
 import { interval, Subscription } from 'rxjs';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -107,7 +107,11 @@ export class CreateComponent implements OnInit {
     }
   }
   addAlarma() {
-    this.alarmas.push(new Alarma(this.alarmas.length, "Alarma " + this.alarmas.length, this.alarmType, "2023-03-18", "12:12 PM", "Diaria", this.sonido));
+    if (this.alarmType == 'Reconocimiento por Voz') {
+      this.alarmas.push(new Alarma(this.alarmas.length, "Alarma " + this.alarmas.length, 'Clásica', "2023-03-18", "12:12 PM", "Diaria", this.sonido));
+    } else {
+      this.alarmas.push(new Alarma(this.alarmas.length, "Alarma " + this.alarmas.length, this.alarmType, "2023-03-18", "12:12 PM", "Diaria", this.sonido));
+    }
   }
 
   changeDateInputId(id: string) {
@@ -167,5 +171,13 @@ export class CreateComponent implements OnInit {
     this.router.navigate(['/events']);
   }
 
+  irEditar(alarmty: string) {
+    if (this.isVoiceRecognition == true) {
+      this.isVoiceRecognition = false;
+      this.pause();
+      this.subscription.unsubscribe();
+    }
+    this.router.navigate(['/edit'], { queryParams: { alarmType: alarmty } });
+  }
 
 }

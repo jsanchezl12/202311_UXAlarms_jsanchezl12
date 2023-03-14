@@ -22,9 +22,19 @@
         android:name="com.jsanchezl.ttmapp.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+
     <fragment
         android:id="@+id/navigation_create"
         android:name="com.jsanchezl.ttmapp.ui.crearClasica.CrearClasicaFragment"
         android:label="fragment_crear_clasica"
-        tools:layout="@layout/fragment_crear_clasica" />
+        tools:layout="@layout/fragment_crear_clasica">
+        <action
+            android:id="@+id/action_clasica_to_nvoz"
+            app:destination="@id/crearNotaVozFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/crearNotaVozFragment"
+        android:name="com.jsanchezl.ttmapp.ui.crearNVoz.CrearNotaVozFragment"
+        android:label="fragment_crear_notavoz"
+        tools:layout="@layout/fragment_crear_notavoz" />
 </navigation>

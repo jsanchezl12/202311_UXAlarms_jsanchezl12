@@ -26,6 +26,7 @@
             android:layout_width="334dp"
             android:minHeight="50dp"
             android:background="#FFD09B"
+            android:textSize="18sp"
             android:layout_height="wrap_content">
         </Spinner>
 

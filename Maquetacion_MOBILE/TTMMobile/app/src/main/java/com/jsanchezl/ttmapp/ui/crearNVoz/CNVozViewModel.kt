@@ -11,3 +11,4 @@ class CNVozViewModel : ViewModel() {
     }
     val text: LiveData<String> = _text
 }
+

@@ -31,10 +31,35 @@
         <action
             android:id="@+id/action_clasica_to_nvoz"
             app:destination="@id/crearNotaVozFragment" />
+        <action
+            android:id="@+id/action_clasica_to_rvoz"
+            app:destination="@id/crearReconocimientoVozFragment" />
     </fragment>
     <fragment
         android:id="@+id/crearNotaVozFragment"
         android:name="com.jsanchezl.ttmapp.ui.crearNVoz.CrearNotaVozFragment"
         android:label="fragment_crear_notavoz"
-        tools:layout="@layout/fragment_crear_notavoz" />
+        tools:layout="@layout/fragment_crear_notavoz">
+        <action
+            android:id="@+id/action_nvoz_to_clasica"
+            app:destination="@id/navigation_create" />
+        <action
+            android:id="@+id/action_nvoz_to_rvoz"
+            app:destination="@id/crearReconocimientoVozFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/crearReconocimientoVozFragment"
+        android:name="com.jsanchezl.ttmapp.ui.crearRVoz.CrearReconocimientoVozFragment"
+        android:label="fragment_crear_recvoz"
+        tools:layout="@layout/fragment_crear_recvoz" >
+        <action
+            android:id="@+id/action_rvoz_to_clasica"
+            app:destination="@id/navigation_create" />
+        <action
+            android:id="@+id/action_rvoz_to_nvoz"
+            app:destination="@id/crearNotaVozFragment" />
+
+    </fragment>
+
+
 </navigation>

@@ -3,14 +3,6 @@ package com.jsanchezl.ttmapp.ui.crearRVoz
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-/*
-class CRVozViewModel : ViewModel() {
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is Crear por Reconocimiento de Voz Fragment"
-    }
-    val text: LiveData<String> = _text
-}*/
 
 import android.app.Application
 import androidx.lifecycle.*

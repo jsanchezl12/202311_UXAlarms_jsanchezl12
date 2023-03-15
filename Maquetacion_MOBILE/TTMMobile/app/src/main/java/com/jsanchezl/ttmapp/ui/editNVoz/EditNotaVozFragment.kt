@@ -42,8 +42,9 @@ class EditNotaVozFragment : Fragment(){
                 val msg: String = items[position];
                 //Toast.makeText(activity, "Opcion: " + msg, Toast.LENGTH_SHORT).show()
                 if( msg == "Clásica") {
+                    findNavController().navigate(R.id.action_envoz_to_eclasica)
                 }else if( msg == "Nota de Voz"){
-                    findNavController().navigate(R.id.action_clasica_to_nvoz)
+
                 }
             }
 

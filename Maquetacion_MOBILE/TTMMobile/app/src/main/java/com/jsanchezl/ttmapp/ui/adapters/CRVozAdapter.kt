@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.jsanchezl.ttmapp.R
 import com.jsanchezl.ttmapp.databinding.AlarmItemBinding
 import com.jsanchezl.ttmapp.models.Alarma
+import com.jsanchezl.ttmapp.ui.crearRVoz.CrearReconocimientoVozFragment
 
 
 class CRVozAdapter : RecyclerView.Adapter<CRVozAdapter.CRVozViewHolder>(){
@@ -33,6 +35,13 @@ class CRVozAdapter : RecyclerView.Adapter<CRVozAdapter.CRVozViewHolder>(){
             it.alarma = alarmas[position]
         }
         holder.viewDataBinding.root.setOnClickListener {
+
+            val alarma = alarmas[position]
+            if(alarma.typeAlarm == "C"){
+                holder.viewDataBinding.root.findNavController().navigate(R.id.action_rvoz_to_eClasica)
+            }else if(alarma.typeAlarm == "NV"){
+                holder.viewDataBinding.root.findNavController().navigate(R.id.action_rvoz_to_envoz)
+            }
 
         }
     }

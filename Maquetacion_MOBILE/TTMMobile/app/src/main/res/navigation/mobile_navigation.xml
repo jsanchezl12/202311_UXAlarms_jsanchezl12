@@ -83,6 +83,16 @@
         <action
             android:id="@+id/action_rvoz_to_nvoz"
             app:destination="@id/crearNotaVozFragment" />
+        <action
+            android:id="@+id/action_rvoz_to_eClasica"
+            app:destination="@id/editClasicaFragment"
+            app:popUpTo="@+id/crearReconocimientoVozFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_rvoz_to_envoz"
+            app:destination="@id/editNotaVozFragment"
+            app:popUpTo="@+id/crearReconocimientoVozFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/navigation_events"
@@ -92,6 +102,16 @@
         <action
             android:id="@+id/action_elista_to_ecalendario"
             app:destination="@id/eventsCalendarioFragment" />
+        <action
+            android:id="@+id/action_el_to_eClasica"
+            app:destination="@id/editClasicaFragment"
+            app:popUpTo="@+id/navigation_events"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_el_to_envoz"
+            app:destination="@id/editNotaVozFragment"
+            app:popUpTo="@+id/navigation_events"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/eventsCalendarioFragment"
@@ -101,6 +121,16 @@
         <action
             android:id="@+id/action_ecalendario_to_elista"
             app:destination="@id/navigation_events" />
+        <action
+            android:id="@+id/action_ec_to_eClasica"
+            app:destination="@id/editClasicaFragment"
+            app:popUpTo="@+id/eventsCalendarioFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_ec_to_envoz"
+            app:destination="@id/editNotaVozFragment"
+            app:popUpTo="@+id/eventsCalendarioFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/editClasicaFragment"
@@ -141,7 +171,7 @@
             app:popUpToInclusive="true"
             />
         <action
-            android:id="@+id/action_envoz_to_clasica"
+            android:id="@+id/action_envoz_to_eclasica"
             app:destination="@id/editClasicaFragment" />
 
     </fragment>

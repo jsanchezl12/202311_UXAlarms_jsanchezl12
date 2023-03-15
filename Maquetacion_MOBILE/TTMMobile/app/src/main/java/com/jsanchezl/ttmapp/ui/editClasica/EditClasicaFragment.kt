@@ -44,7 +44,7 @@ class EditClasicaFragment: Fragment(){
                 //Toast.makeText(activity, "Opcion: " + msg, Toast.LENGTH_SHORT).show()
                 if( msg == "Clásica") {
                 }else if( msg == "Nota de Voz"){
-                    findNavController().navigate(R.id.action_clasica_to_nvoz)
+                    findNavController().navigate(R.id.action_eclasica_to_envoz)
                 }
             }
 
@@ -55,11 +55,11 @@ class EditClasicaFragment: Fragment(){
 
         val btnCancelar: Button = binding.BtnCancelar
         btnCancelar.setOnClickListener {
-            findNavController().navigate(R.id.action_clasica_to_home)
+            findNavController().navigate(R.id.action_eclasica_to_home)
         }
         val btnModificar: Button = binding.BtnModificar
         btnModificar.setOnClickListener {
-            findNavController().navigate(R.id.action_clasica_to_events_lista)
+            findNavController().navigate(R.id.action_eclasica_to_events_lista)
         }
         return root
     }

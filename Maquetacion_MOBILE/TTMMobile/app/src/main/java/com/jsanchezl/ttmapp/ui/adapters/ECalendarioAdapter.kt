@@ -11,7 +11,7 @@ import com.jsanchezl.ttmapp.R
 import com.jsanchezl.ttmapp.databinding.AlarmItemBinding
 import com.jsanchezl.ttmapp.models.Alarma
 
-class EListaAdapter : RecyclerView.Adapter<EListaAdapter.EListaViewHolder>(){
+class ECalendarioAdapter : RecyclerView.Adapter<ECalendarioAdapter.ECViewHolder>(){
     var alarmas :List<Alarma> = emptyList()
 
         @SuppressLint("NotifyDataSetChanged")
@@ -19,25 +19,25 @@ class EListaAdapter : RecyclerView.Adapter<EListaAdapter.EListaViewHolder>(){
             field = value
             notifyDataSetChanged()
         }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EListaViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ECViewHolder {
         val withDataBinding: AlarmItemBinding = DataBindingUtil.inflate(
             LayoutInflater.from(parent.context),
-            EListaViewHolder.LAYOUT,
+            ECViewHolder.LAYOUT,
             parent,
             false)
-        return EListaViewHolder(withDataBinding)
+        return ECViewHolder(withDataBinding)
     }
 
-    override fun onBindViewHolder(holder: EListaViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ECViewHolder, position: Int) {
         holder.viewDataBinding.also {
             it.alarma = alarmas[position]
         }
         holder.viewDataBinding.root.setOnClickListener {
             val alarma = alarmas[position]
             if(alarma.typeAlarm == "C"){
-                holder.viewDataBinding.root.findNavController().navigate(R.id.action_el_to_eClasica)
+                holder.viewDataBinding.root.findNavController().navigate(R.id.action_ec_to_eClasica)
             }else if(alarma.typeAlarm == "NV"){
-                holder.viewDataBinding.root.findNavController().navigate(R.id.action_el_to_envoz)
+                holder.viewDataBinding.root.findNavController().navigate(R.id.action_ec_to_envoz)
             }
         }
     }
@@ -45,7 +45,7 @@ class EListaAdapter : RecyclerView.Adapter<EListaAdapter.EListaViewHolder>(){
     override fun getItemCount(): Int {
         return alarmas.size
     }
-    class EListaViewHolder(val viewDataBinding: AlarmItemBinding) :
+    class ECViewHolder(val viewDataBinding: AlarmItemBinding) :
         RecyclerView.ViewHolder(viewDataBinding.root) {
         companion object {
             @LayoutRes

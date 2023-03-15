@@ -4,5 +4,6 @@ data class Alarma (
     var id: Int = 0,
     var desc: String = "",
     var time: String = "",
-    var repetir: String = ""
+    var repetir: String = "",
+    var typeAlarm: String = ""
 )

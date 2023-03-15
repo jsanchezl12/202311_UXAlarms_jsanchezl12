@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.crearClasica.CrearClasicaFragment">
-
+    tools:context=".ui.editNVoz.EditNotaVozFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,7 +14,7 @@
         <TextView
             android:layout_width="334dp"
             android:layout_height="wrap_content"
-            android:text="Crear Alarma"
+            android:text="Editar Alarma"
             android:textColor="#035397"
             android:paddingLeft="15dp"
             android:layout_marginTop="15dp"
@@ -23,7 +22,7 @@
         </TextView>
 
         <Spinner
-            android:id="@+id/SPAlarmsTypes"
+            android:id="@+id/SPEAlarmsTypes"
             android:layout_width="334dp"
             android:minHeight="50dp"
             android:background="#FFD09B"
@@ -124,7 +123,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sonido"
+                android:text="Grabar nota de Voz"
+                android:gravity="center"
+                android:maxWidth="150dp"
                 android:textColor="#035397"
                 android:layout_marginRight="20dp"
                 android:textSize="25dp">
@@ -134,7 +135,7 @@
                 android:layout_height="wrap_content"
                 android:background="#FFD09B"
                 android:textSize="25dp"
-                android:minWidth="200dp"
+                android:minWidth="180dp"
                 >
             </EditText>
         </LinearLayout>
@@ -144,7 +145,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             >
 
             <Button
@@ -161,12 +162,12 @@
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"></Space>
             <Button
-                android:id="@+id/BtnCrear"
+                android:id="@+id/BtnModificar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minWidth="130dp"
                 android:minHeight="60dp"
-                android:text="Crear"
+                android:text="Modificar"
                 android:textSize="20dp"
                 android:backgroundTint="#5089C6"
                 ></Button>
@@ -174,5 +175,7 @@
 
 
     </LinearLayout>
+
+
 
 </FrameLayout>

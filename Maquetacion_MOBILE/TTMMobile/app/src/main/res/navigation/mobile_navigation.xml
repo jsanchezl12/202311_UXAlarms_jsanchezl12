@@ -29,6 +29,18 @@
         android:label="fragment_crear_clasica"
         tools:layout="@layout/fragment_crear_clasica">
         <action
+            android:id="@+id/action_clasica_to_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@+id/navigation_create"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_clasica_to_events_lista"
+            app:destination="@id/navigation_events"
+            app:popUpTo="@+id/navigation_create"
+            app:popUpToInclusive="true"
+            />
+        <action
             android:id="@+id/action_clasica_to_nvoz"
             app:destination="@id/crearNotaVozFragment" />
         <action
@@ -41,11 +53,24 @@
         android:label="fragment_crear_notavoz"
         tools:layout="@layout/fragment_crear_notavoz">
         <action
+            android:id="@+id/action_nvoz_to_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@+id/navigation_create"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_nvoz_to_events_lista"
+            app:destination="@id/navigation_events"
+            app:popUpTo="@+id/navigation_create"
+            app:popUpToInclusive="true"
+            />
+        <action
             android:id="@+id/action_nvoz_to_clasica"
             app:destination="@id/navigation_create" />
         <action
             android:id="@+id/action_nvoz_to_rvoz"
             app:destination="@id/crearReconocimientoVozFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/crearReconocimientoVozFragment"
@@ -58,6 +83,66 @@
         <action
             android:id="@+id/action_rvoz_to_nvoz"
             app:destination="@id/crearNotaVozFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_events"
+        android:name="com.jsanchezl.ttmapp.ui.eventsLista.EventsListaFragment"
+        android:label="fragment_events_lista"
+        tools:layout="@layout/fragment_events_lista" >
+        <action
+            android:id="@+id/action_elista_to_ecalendario"
+            app:destination="@id/eventsCalendarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventsCalendarioFragment"
+        android:name="com.jsanchezl.ttmapp.ui.eventsCalendario.EventsCalendarioFragment"
+        android:label="fragment_events_calendario"
+        tools:layout="@layout/fragment_events_calendario" >
+        <action
+            android:id="@+id/action_ecalendario_to_elista"
+            app:destination="@id/navigation_events" />
+    </fragment>
+    <fragment
+        android:id="@+id/editClasicaFragment"
+        android:name="com.jsanchezl.ttmapp.ui.editClasica.EditClasicaFragment"
+        android:label="fragment_edit_clasica"
+        tools:layout="@layout/fragment_edit_clasica" >
+        <action
+            android:id="@+id/action_eclasica_to_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@+id/editClasicaFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_eclasica_to_events_lista"
+            app:destination="@id/navigation_events"
+            app:popUpTo="@+id/editClasicaFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_eclasica_to_envoz"
+            app:destination="@id/editNotaVozFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editNotaVozFragment"
+        android:name="com.jsanchezl.ttmapp.ui.editNVoz.EditNotaVozFragment"
+        android:label="fragment_edit_nvoz"
+        tools:layout="@layout/fragment_edit_nvoz" >
+        <action
+            android:id="@+id/action_envoz_to_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@+id/editNotaVozFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_envoz_to_events_lista"
+            app:destination="@id/navigation_events"
+            app:popUpTo="@+id/editNotaVozFragment"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_envoz_to_clasica"
+            app:destination="@id/editClasicaFragment" />
 
     </fragment>
 

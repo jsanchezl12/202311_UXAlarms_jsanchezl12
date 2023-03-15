@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.crearClasica.CrearClasicaFragment">
+    tools:context=".ui.editClasica.EditClasicaFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="334dp"
             android:layout_height="wrap_content"
-            android:text="Crear Alarma"
+            android:text="Editar Alarma"
             android:textColor="#035397"
             android:paddingLeft="15dp"
             android:layout_marginTop="15dp"
@@ -23,7 +23,7 @@
         </TextView>
 
         <Spinner
-            android:id="@+id/SPAlarmsTypes"
+            android:id="@+id/SPEAlarmsTypes"
             android:layout_width="334dp"
             android:minHeight="50dp"
             android:background="#FFD09B"
@@ -161,12 +161,12 @@
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"></Space>
             <Button
-                android:id="@+id/BtnCrear"
+                android:id="@+id/BtnModificar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minWidth="130dp"
                 android:minHeight="60dp"
-                android:text="Crear"
+                android:text="Modificar"
                 android:textSize="20dp"
                 android:backgroundTint="#5089C6"
                 ></Button>

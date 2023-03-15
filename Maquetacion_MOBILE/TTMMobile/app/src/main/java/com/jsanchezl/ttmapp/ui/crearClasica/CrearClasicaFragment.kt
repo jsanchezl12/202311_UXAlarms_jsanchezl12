@@ -49,9 +49,7 @@ class CrearClasicaFragment : Fragment(){
                     findNavController().navigate(R.id.action_clasica_to_nvoz)
                 }else if (msg == "Reconocimiento Por Voz"){
                     findNavController().navigate(R.id.action_clasica_to_rvoz)
-
                 }
-
             }
 
             override fun onNothingSelected(parent: AdapterView<*>) {
@@ -59,7 +57,14 @@ class CrearClasicaFragment : Fragment(){
             }
         }
 
-
+        val btnCancelar: Button = binding.BtnCancelar
+        btnCancelar.setOnClickListener {
+            findNavController().navigate(R.id.action_clasica_to_home)
+        }
+        val btnCrear: Button = binding.BtnCrear
+        btnCrear.setOnClickListener {
+            findNavController().navigate(R.id.action_clasica_to_events_lista)
+        }
         return root
     }
 

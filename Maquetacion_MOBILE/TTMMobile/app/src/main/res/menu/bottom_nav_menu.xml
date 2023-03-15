@@ -10,7 +10,7 @@
         android:icon="@drawable/hogar"
         android:title="Inicio" />
     <item
-        android:id="@+id/navigation_notifications"
+        android:id="@+id/navigation_events"
         android:icon="@drawable/time_clock"
         android:title="Eventos" />
 </menu>

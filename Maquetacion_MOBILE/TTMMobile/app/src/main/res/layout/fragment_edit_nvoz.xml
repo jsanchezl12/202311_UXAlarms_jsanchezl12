@@ -30,22 +30,17 @@
             android:layout_height="wrap_content">
         </Spinner>
 
-        <TextView
-            android:layout_width="334dp"
+        <TimePicker
+            android:id="@+id/timePicker"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="HORA"
-            android:textColor="#035397"
-            android:paddingLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:textSize="28dp">
-        </TextView>
+            android:timePickerMode="spinner" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
-            android:layout_marginTop="50dp"
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -56,11 +51,14 @@
                 android:textSize="25dp">
             </TextView>
             <EditText
+                android:id="@+id/ETFecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#FFD09B"
                 android:textSize="25dp"
                 android:minWidth="200dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 >
             </EditText>
         </LinearLayout>
@@ -69,7 +67,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -80,11 +78,14 @@
                 android:textSize="25dp">
             </TextView>
             <EditText
+                android:id="@+id/ETRepetir"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#FFD09B"
                 android:textSize="25dp"
                 android:minWidth="200dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 >
             </EditText>
         </LinearLayout>
@@ -93,7 +94,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -104,6 +105,7 @@
                 android:textSize="25dp">
             </TextView>
             <EditText
+                android:id="@+id/ETDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#FFD09B"
@@ -118,7 +120,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -131,11 +133,14 @@
                 android:textSize="25dp">
             </TextView>
             <EditText
+                android:id="@+id/ETGrabacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="#FFD09B"
                 android:textSize="25dp"
                 android:minWidth="180dp"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 >
             </EditText>
         </LinearLayout>
